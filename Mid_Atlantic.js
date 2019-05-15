@@ -83,7 +83,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
 
   var uneditedpts = L.esri.featureLayer({
     url: "https://edits.nationalmap.gov/arcgis/rest/services/TNMCorps/TNMCorps_Map_Challenge/MapServer/0",
-  where: "EDITSTATUS = 0 AND FCODE = '83044' AND STATE='NY'",
+  where: "EDITSTATUS = 0 AND FCODE = '83044' AND (STATE='NY' OR STATE='PA' OR STATE='NJ')",
             pointToLayer: function(feature, latlng) {
               if(feature.properties.EDITSTATUS === 0){ 
                 return L.marker(latlng, {
@@ -105,7 +105,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
   
   var peerreviewpts = L.esri.featureLayer({
     url: "https://edits.nationalmap.gov/arcgis/rest/services/TNMCorps/TNMCorps_Map_Challenge/MapServer/0", 
-  where: "EDITSTATUS = 1 AND FCODE = '83044' AND STATE='NY'",
+  where: "EDITSTATUS = 1 AND FCODE = '83044' AND (STATE='NY' OR STATE='PA' OR STATE='NJ')",
           pointToLayer: function(feature, latlng) {
             if(feature.properties.EDITSTATUS === 1){ 
               return L.marker(latlng, {
@@ -126,7 +126,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
   
   var finishedpts = L.esri.featureLayer({
     url: "https://edits.nationalmap.gov/arcgis/rest/services/TNMCorps/TNMCorps_Map_Challenge/MapServer/0",
-  where: "FCODE = '83044' AND STATE='NY' AND (EDITSTATUS = 2 OR EDITSTATUS = 3 OR EDITSTATUS = 4)",
+  where: "FCODE = '83044' AND (STATE='NY' OR STATE='PA' OR STATE='NJ') AND (EDITSTATUS = 2 OR EDITSTATUS = 3 OR EDITSTATUS = 4)",
           pointToLayer: function(feature, latlng) {
               return L.marker(latlng, {
               icon: L.ExtraMarkers.icon({
@@ -148,7 +148,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
   var finished = L.layerGroup([finishedpts]);
 
   var overlay = {
-   "Unedited": unedited, 
+    "To be Checked": unedited, 
    "Peer Review": peerreview, 
    "Finished": finished
   }
@@ -165,13 +165,21 @@ var basemaps = {
 
 var map = L.map('map',{
 	layers: [national,unedited,peerreview,finished],
-	'maxBounds': bounds 
+  'maxBounds': bounds,
 }) .setView([38.005358, -79.154932], 6);
 
 // custom zoom layer so as not to push past a certian level 
 
 map.zoomControl.setPosition('bottomright')
 
-L.control.layers(basemaps, overlay, {
-  position: 'topright'
-}).addTo(map);
+var control = L.control.layers(basemaps, overlay); 
+control.addTo(map);
+
+var htmlObject = control.getContainer(); 
+
+var a = document.getElementById('new-parent'); 
+
+function setParent(el, newParent){
+  newParent.appendChild(el); 
+}
+setParent(htmlObject,a); 

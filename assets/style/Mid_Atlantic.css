@@ -6,6 +6,7 @@ html, body {
   width: 100%;
   overflow: visible;
 }
+
 /* Lines 10 -14: Gives the height and width of the map.*/
 #map{
   height: 100%;
@@ -80,6 +81,35 @@ h2:after {
   color: #ffffff;
   font-size: 25px
 }
+
+.container {
+  display: block;
+  align-items: right
+}
+
+.label {
+  font-family:'roboto', sans-serif;
+  margin: -5px; 
+  position: fixed;
+  top: 530px;  
+  left: 10
+}
+
+.labeled {
+    font-family:'roboto', sans-serif;
+    margin: 0 5px; 
+    font-size: 15px;
+    text-align: justify;
+    position: fixed; 
+    top: 555px; 
+  }
+
+.center-objs { 
+  position: absolute;
+  top: 585px;
+  left: 10
+}
+
 
 h5 {
   position: static;

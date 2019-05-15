@@ -27,7 +27,7 @@
   <script>
     L_PREFER_CANVAS = true; 
   </script>
-  <link rel="stylesheet" href="./assets/style/DC_Area.css">
+  <link rel="stylesheet" href="./assets/style/Mid_Atlantic.css">
   <link href="./assets/style/common.css" rel="stylesheet" type="text/css" media="screen" />
   <link href="./assets/style/custom.css" rel="stylesheet" type="text/css" media="screen" />
 
@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="header" class="ribbon">
           <h2>TNMCorps </br> Challenge Map</h2>
           <!-- <hr> -->
-          <h2> New York: City/Town Halls </h2>
+          <h2> Mid-Atlantic: City/Town Halls </h2>
         </div>
         <div id="layerControl" style="padding-top: 15px">
         </div>
@@ -91,7 +91,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <i class="fa fa-exclamation"></i>
             </div>
             <div class="markers-descri" id="tobecheckedDescr">
-			<!--<input type ="checkbox" id="Unedited" checked>-->
+      <!--<input type ="checkbox" id="Unedited" checked>-->
+      <!--Move Control layer outside of the Map-->
+      <div class="container">
+        <div class="center-objs">
+            <h3><p class="label"><u>Layers List:</u></p></h3>
+            <p class ="labeled">To turn layers off and on, <br>use the checkboxes in the layers list.</p>
+          <div id="new-parent"></div>
+        </div>
+      </div>
 			<!--<p id ="demo"></p>-->
 				Points that need to be checked
 			  <div id="tobecheckedCounter"></div>
@@ -139,7 +147,7 @@ The purple circles represent clustered points. The number shown is the number of
         </div>
       </div>
       <div class="col-sm-9" id="map" style="height: 100%;">
-        <script src="./DC_Area.js"></script>
+        <script src="./Mid_Atlantic.js"></script>
       </div>
     </div>
   </div>
