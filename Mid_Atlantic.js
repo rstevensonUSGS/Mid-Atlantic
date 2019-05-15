@@ -75,8 +75,8 @@ Note: Line 46  and 47 are important in this block of code. Line 46 is where the 
         });*/
 	
 // Lines 96 - 98 Is your bounding box, for the area you wish to focus the map. 					 
-var southWest = L.latLng(31.427153, -88.204519), // updated March 2019  
-  northEast = L.latLng(47.021951, -68.569633),
+var southWest = L.latLng(39.409480, -83.430250), // updated March 2019  
+  northEast = L.latLng(42.976336, -68.808530),
   bounds = L.latLngBounds(southWest, northEast);
 
   // Checkboxes 
@@ -148,7 +148,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
   var finished = L.layerGroup([finishedpts]);
 
   var overlay = {
-    "To be Checked": unedited, 
+  "To be Checked": unedited, 
    "Peer Review": peerreview, 
    "Finished": finished
   }
