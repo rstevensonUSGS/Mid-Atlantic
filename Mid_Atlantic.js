@@ -158,7 +158,7 @@ var southWest = L.latLng(31.427153, -88.204519), // updated March 2019
 
 //Line 137 - 142 Is the variable that houses the basemap names. Two lines are commented out that reflect the two basemaps that are not currently being used for this challenge map. 
 var basemaps = {
-  "The Nationap Map + Aerial Imagery": imageryTopo,
+  "The National Map + Aerial Imagery": imageryTopo,
   /*"The National Map Base Layer": nationalMap,*/
   // "USDA NAIP": usdaNAIP,
 };
