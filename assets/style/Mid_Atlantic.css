@@ -90,22 +90,24 @@ h2:after {
 .label {
   font-family:'roboto', sans-serif;
   margin: -5px; 
-  position: fixed;
-  top: 590; 
+  position: relative;
+  top: 5px; 
+  left: 0;  
 }
 
 .labeled {
     font-family:'roboto', sans-serif;
     margin: 0 5px; 
     font-size: 15px;
-    text-align: justify;
-    position: fixed; 
-    top: 610; 
+    text-align: justify; 
+    position: relative;
+    top: -4px;
+    left: 0
   }
 
 .center-objs { 
-  position: fixed;
-  top: 630;
+  position: absolute;
+  top: 500px;
   left: 10
 }
 
