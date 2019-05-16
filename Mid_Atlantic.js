@@ -75,7 +75,7 @@ Note: Line 46  and 47 are important in this block of code. Line 46 is where the 
         });*/
 	
 // Lines 96 - 98 Is your bounding box, for the area you wish to focus the map. 					 
-var southWest = L.latLng(39.409480, -83.430250), // updated March 2019  
+var southWest = L.latLng(38.309071, -85.772814), // updated March 2019  
   northEast = L.latLng(46.755800, -67.158168),
   bounds = L.latLngBounds(southWest, northEast);
 
